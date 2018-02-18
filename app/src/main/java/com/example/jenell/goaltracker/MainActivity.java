@@ -50,12 +50,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addGoal(View v) {
-        int x = 2;
 
         EditText ed = findViewById(R.id.editText);
-        String s = ed.getText().toString();
+        String s = ed.getText().toString(); //Grab the entered title of the goal from the editText object
 
-        Intent s = new Intent("DatePicker")
+        Intent i = new Intent("datepicker"); //Create a new intent
+        i.putExtra("goalname",s); //Store the title of the goal within the intent, to be passed to the next activity
+
+
+        startActivity(i); //Start the datepicker activity
 
     }
 }
